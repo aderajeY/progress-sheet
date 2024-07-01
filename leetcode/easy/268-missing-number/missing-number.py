@@ -1,15 +1,11 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        n = len(nums)
-        xor = 0
+        result = 0
+    
+        for counter,value in enumerate(nums):
 
-        for num in nums:
-            xor ^= num
+            result ^= counter+1 # XOR result with numbers from the complete series
+            result ^= value # XOR with the numbers given in num series
 
-        for i in range(n + 1):
-            xor ^= i
-
-        return xor
-
-            
+        return result
         
