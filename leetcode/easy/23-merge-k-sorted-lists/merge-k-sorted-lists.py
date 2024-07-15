@@ -12,11 +12,11 @@ class Solution:
                 lst = lst.next
         if not res:
             return None
-        heapq.heapify(res)
+        heapify(res)
         dummy = ListNode(0)
         current = dummy
         while res:
-            val = heapq.heappop(res)
+            val = heappop(res)
             current.next = ListNode(val)
             current = current.next
         return dummy.next
